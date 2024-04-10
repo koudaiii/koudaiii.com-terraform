@@ -59,6 +59,11 @@ jobs:
       run: terraform validate
 
     # TFlint
+    - name: Setup TFLint
+      uses: terraform-linters/setup-tflint@v4
+      with:
+        tflint_version: v0.50.3
+
     - name: TFlint
       run: |
         tflint --config $GITHUB_WORKSPACE/.tflint.hcl --init
