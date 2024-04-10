@@ -38,7 +38,7 @@ jobs:
       with:
         terraform_version: 1.7.5
 
-    # Setup tfcmt
+    # Setup tfcmt https://github.com/marketplace/actions/setup-tfcmt-action
     - name: Setup tfcmt
       uses: shirakiya/setup-tfcmt@v1
       with:
@@ -58,7 +58,7 @@ jobs:
     - name: terraform validate
       run: terraform validate
 
-    # TFlint
+    # TFlint https://github.com/marketplace/actions/setup-tflint
     - name: Setup TFLint
       uses: terraform-linters/setup-tflint@v4
       with:
