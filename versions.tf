@@ -6,6 +6,10 @@ terraform {
       source  = "hashicorp/azuread"
       version = "=2.41.0"
     }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.98.0"
+    }
   }
   required_version = "1.7.5"
 
