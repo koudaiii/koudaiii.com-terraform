@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+RESOURCE_GROUP_NAME="koudaiii.com-terraform"
+STORAGE_ACCOUNT_NAME="koudaiiicom"
+CONTAINER_NAME=tfstate
+SUBSCRIPTION_ID="fc2da8a8-dc82-4a28-8805-e7287bb7d20d"
+
+# Login to Azure
+az login
+
+# Set the default subscription
+az account set --subscription $SUBSCRIPTION_ID
+
+ARM_ACCESS_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
+
+echo "export ARM_ACCESS_KEY=$ARM_ACCESS_KEY"
